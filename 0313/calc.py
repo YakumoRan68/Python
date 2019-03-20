@@ -2,7 +2,7 @@ num = 1;
 array = [];
 
 def getnum():
-    array.append(int(input(str(num) + " 번째 숫자를 입력하세요 : ")))
+    array.append(int(input( str(num) + " 번째 숫자를 입력하세요 : ")))
     return
 
 while num <= 2:
