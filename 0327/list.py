@@ -10,14 +10,28 @@ print(a[2:])
 print(a[2:1:-1])
 print(a[2::-1])
 
+print(a.pop(), a)
+
 doubled = a * 2 
 print(doubled)
 
-intlist = [1,2,3,4,5]
+copy = a #배열의 원소가 복제됨
+print("copy", copy) 
+
+copy.append("a")
+print(copy)
+
+copy.append([1,2])
+print(copy)
+
+copy.extend([1,2])
+print(copy)
+
+intlist = [5,4,3,2,1]
 print([elem*2 for elem in intlist if elem >= 3 >0]) #[<condition>index]
 
-print(a.pop(), a)
-
 #a.sort() : cannot sort list emelement
-print(a)
+print(intlist)
+intlist.sort()
+print(intlist)
 
