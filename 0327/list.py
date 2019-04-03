@@ -10,22 +10,40 @@ print(a[2:])
 print(a[2:1:-1])
 print(a[2::-1])
 
+
+print("\n")
+a = [1,2,3,4,5]
+
 print(a.pop(), a)
 
 doubled = a * 2 
 print(doubled)
+print(id(a), id(doubled)) #새로운 주소를 할당해서 복사한다는 것을 알 수 있음
 
-copy = a #배열의 원소가 복제됨
-print("copy", copy) 
+a.append("a")
+print(a)
 
-copy.append("a")
-print(copy)
+a.append([1,2])
+print("appeded", a)
 
-copy.append([1,2])
-print(copy)
+a.extend([1,2])
+print("extended", a)
 
-copy.extend([1,2])
-print(copy)
+a.reverse()
+print("reversed ", a)
+
+a.insert(3, "x") #n번째가 아니고 인덱스 번호임
+print("inserted", a)
+
+print("1's count is " + str(a.count(1)))
+
+print("found", a.index([1,2])) #찾는 메소드
+
+print("length of a = ", len(a))
+
+a.clear()
+print(a)
+del(a)
 
 intlist = [5,4,3,2,1]
 print([elem*2 for elem in intlist if elem >= 3 >0]) #[<condition>index]
@@ -34,4 +52,3 @@ print([elem*2 for elem in intlist if elem >= 3 >0]) #[<condition>index]
 print(intlist)
 intlist.sort()
 print(intlist)
-
