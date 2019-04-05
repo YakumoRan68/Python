@@ -10,6 +10,8 @@ copied = a.copy() # 얕은 복사; 새로운 오브젝트가 생성되지만 그
 print(id(a), id(copied))
 copied.append(1)
 var = "changed" #안바뀜. 값만 들어갔었기 때문에
-print(a, copied) 
+print(a, copied)
 
-print(__file__)
+deepcopied = copy.deepcopy(a)
+
+input()
