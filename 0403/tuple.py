@@ -17,3 +17,5 @@ except Exception :
 print(tup * 2)
 print(len(tup))
 
+del tup
+
