@@ -41,4 +41,4 @@ y = toint(operand)
 print(x, y, operator)
 result = calculate(x, y, operator)
 
-print("답은 "+result+" 입니다.")
+print("답은 " + result + " 입니다.")
