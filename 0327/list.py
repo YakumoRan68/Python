@@ -46,7 +46,7 @@ print(a)
 del(a)
 
 intlist = [5,4,3,2,1]
-print([elem*2 for elem in intlist if elem >= 3 >0]) #[<condition>index]
+print([elem*2 for elem in intlist if elem >= 3 >0]) #[condition>index]
 
 #a.sort() : cannot sort list emelement
 print(intlist)
