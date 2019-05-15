@@ -12,9 +12,7 @@ def div(a, b) :
 
 def calc(x, y, iterator) :
 	try :
-		return globals()[iterator](x, y)
+		return str(globals()[iterator](x, y))
 	except Exception:
 		print("잘못된 입력입니다.")
 		return
-
-print(calc(10, 20, 'add'))
