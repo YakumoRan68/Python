@@ -1,6 +1,13 @@
 from tkinter import *
+import tkinter.messagebox
 
-
+def parse() :
+    try : 
+        int(Op[0].get())
+        int(Op[1].get())
+    except Exception:
+        tkinter.messagebox.showinfo("오류", "잘못된 입력입니다.")
+        return -1
 
 def add() :
     result["text"] = str(int(Op[0].get()) + int(Op[1].get()))

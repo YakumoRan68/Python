@@ -17,7 +17,7 @@ class stack:
 		else:
 			print("stack underflow")
 
-	def top(self) :
+	def viewtop(self) :
 		return self.memory
 
 x = stack()

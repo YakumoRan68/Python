@@ -52,3 +52,6 @@ print([elem*2 for elem in intlist if elem >= 3 >0]) #[condition>index]
 print(intlist)
 intlist.sort()
 print(intlist)
+
+a = list(range(4))
+print(a)

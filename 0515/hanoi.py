@@ -1,3 +1,5 @@
+count = 0
+
 def hanoi(n, a, b, c) :
 	global count
 	if n == 1 :
@@ -9,6 +11,5 @@ def hanoi(n, a, b, c) :
 		hanoi(n-1, b,a,c)
 
 cnt = int(input("원반 갯수 입력 : "))
-count = 0
 hanoi(cnt, 'a','b', 'c')
 print("원반의 이동 횟수 : %d", count)
