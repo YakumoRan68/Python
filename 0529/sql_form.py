@@ -5,13 +5,9 @@ from tkinter import messagebox
 def insertData() :
     connect = sqlite3.connect("D:\\201804011\\sqlite3\\test")
     cursor = connect.cursor()
-    data = list(range(4))
-
-    for i in range(4) :
-        data[i] = Edts[i]
     
     try :
-        cursor.execute("INSERT INTO student VALUES('" + data[0] + "','" + data[1] + "','" + data[2] + "','" + data[3] + "')")
+        cursor.execute("INSERT INTO student VALUES('" + Edts[0] + "','" + Edts[1] + "','" + Edts[2] + "','" + Edts[3] + "')")
     except :
         messagebox.showerror('오류', '데이터 입력 오류 발생')
     else :
