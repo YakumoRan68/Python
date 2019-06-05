@@ -7,7 +7,7 @@ def insertData() :
     cursor = connect.cursor()
     
     try :
-        cursor.execute("INSERT INTO student VALUES('" + Edts[0] + "','" + Edts[1] + "','" + Edts[2] + "','" + Edts[3] + "')")
+        cursor.execute("INSERT INTO student VALUES('" + Edts[0].get() + "','" + Edts[1].get() + "','" + Edts[2].get() + "','" + Edts[3].get() + "')")
     except :
         messagebox.showerror('오류', '데이터 입력 오류 발생')
     else :
