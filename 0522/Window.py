@@ -25,4 +25,6 @@ button1.pack(side = LEFT)
 entry1.pack(side = LEFT)
 entry2.pack(side = LEFT)
 
+print(button1.winfo_pointerxy())
+
 window.mainloop()
