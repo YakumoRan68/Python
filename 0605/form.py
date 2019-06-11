@@ -3,7 +3,7 @@ import sqlite3
 
 root = Tk()
 
-root.title = "성적 처리"
+root.title("성적 처리")
 root.geometry("400x500")
 root.resizable(False, False)
 
