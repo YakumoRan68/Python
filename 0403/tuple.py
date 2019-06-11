@@ -1,6 +1,6 @@
 tup = (5,4,3,2,1)
-for i in tup :
-	print(tup[i -1])
+for v in tup :
+	print(v)
 
 #tup[1] = 5 값을 변경할 수 없음.
 
