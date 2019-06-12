@@ -9,7 +9,7 @@ def GetTime() :
 calendar.setfirstweekday(calendar.SUNDAY) #달력 첫요일을 일요일로 설정
 Today = calendar.monthcalendar(GetTime().year, GetTime().month)
 DayofWeek = ("일", "월", "화", "수", "목", "금", "토")
-Colors = dict(black = "#000000", white = "#FFFFFF", red = "#FF0000", blue = "#0000FF", highlighted = "#F3F781")
+Colors = dict(black = "#000000", white = "#FFFFFF", red = "#FF0000", blue = "#0000FF", highlighted = "#F3F781", DefaultBG = "SystemButtonFace")
 
 root = Tk()
 
@@ -22,10 +22,7 @@ MonthSetFrame.grid_propagate(False) #Frame안에 다른 위젯이 존재할경�
 MonthSetFrame.place(x = 0, y = 0)
 MonthSetFrame.pack(anchor = "nw")
 
-CurrentYear = StringVar()
-CurrentYear.set(GetTime().year)
-
-def OnDateChanged(event) :
+def OnDateChanged(*args) :
     CurrentMonth = calendar.monthcalendar(int(YearBox.get()), int(MonthBox.get()))
     CurrentMonth.append([0, 0, 0, 0, 0, 0, 0]) #인덱스 범위 초과문제 해결
 
@@ -33,6 +30,10 @@ def OnDateChanged(event) :
         for j in range(7) :
             Day = CurrentMonth[i][j]
             Days[i + 1][j].DayLabel.configure(text = Day if Day > 0 else "")
+
+CurrentYear = StringVar()
+CurrentYear.set(GetTime().year)
+CurrentYear.trace_add("write", OnDateChanged)
 
 YearBox = Spinbox(MonthSetFrame, width = 8, validate = 'key', textvariable = CurrentYear, to = 2100, wrap = True)
 YearBox.grid(row = 0, column = 0, padx = (170, 0)) #grid의 패딩 설정은 2개의 튜플 값을 입력할 수도 있음. padx의 경우 (좌,우), pady의 경우(상,하)  
@@ -79,7 +80,7 @@ for i in range(7) :
 
         if i == 0 :
             DayText = DayofWeek[j]
-            BgColor = "SystemButtonFace"
+            BgColor = Colors["DefaultBG"]
         else :
             Day = Today[i-1][j]
             DayText = Day if Day > 0 else ""
@@ -108,6 +109,8 @@ for i in range(7) :
         
     Days.append(Week)
 
-
+InfoFrame = Frame(root, width = 160, height = 60, bd = 1, relief = SOLID, pady = 15)
+InfoFrame.place(x = 540, y = 0)
+InfoFrame.pack(side = RIGHT, fill = "both")
 
 root.mainloop()
