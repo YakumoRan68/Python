@@ -23,7 +23,8 @@ MonthSetFrame.place(x = 0, y = 0)
 MonthSetFrame.pack(anchor = "nw")
 
 def OnDateChanged(*args) :
-    CurrentMonth = calendar.monthcalendar(int(YearBox.get()), int(MonthBox.get()))
+    
+    CurrentMonth = calendar.monthcalendar(if int(YearBox.get()), int(MonthBox.get()))
     CurrentMonth.append([0, 0, 0, 0, 0, 0, 0]) #인덱스 범위 초과문제 해결
 
     for i in range(6) :
@@ -31,15 +32,15 @@ def OnDateChanged(*args) :
             Day = CurrentMonth[i][j]
             Days[i + 1][j].DayLabel.configure(text = Day if Day > 0 else "")
 
+YearLabel = Label(MonthSetFrame, text = "년")
+YearLabel.grid(row = 0, column = 1)
+
 CurrentYear = StringVar()
 CurrentYear.set(GetTime().year)
 CurrentYear.trace_add("write", OnDateChanged)
 
 YearBox = Spinbox(MonthSetFrame, width = 8, validate = 'key', textvariable = CurrentYear, to = 2100, wrap = True)
 YearBox.grid(row = 0, column = 0, padx = (170, 0)) #grid의 패딩 설정은 2개의 튜플 값을 입력할 수도 있음. padx의 경우 (좌,우), pady의 경우(상,하)  
-
-YearLabel = Label(MonthSetFrame, text = "년")
-YearLabel.grid(row = 0, column = 1)
 
 MonthBox = tkinter.ttk.Combobox(MonthSetFrame, width = 4, height = 12, values = [i+1 for i in range(12)])
 MonthBox.current(GetTime().month - 1)

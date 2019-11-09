@@ -24,4 +24,4 @@ x = stack()
 x.push(3)
 x.push(4)
 
-print(x.pop(), x.pop())
+print(x(), x.pop(), x.pop())

@@ -8,4 +8,5 @@ def n(*args, **kwargs) :
 	return [args, {**kwargs}]
 
 print(test(1, None, 2, 3, 4, 5, x = 6, y = 7, z = 8))
+print(n(x=3))
 # print(n(x = 3, 3)) 순서가 맞지않아서 오류
